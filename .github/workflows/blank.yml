@@ -37,5 +37,5 @@ jobs:
         run: |
           echo "first ${TEST}"
           echo "second ${{ env.TEST }}"
-          echo "third ${env.TEST}"
-          echo "fourth ${ env.TEST }"
+          echo "third ${ env.TEST }"
+          echo "fourth ${env.TEST}"
