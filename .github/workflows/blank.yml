@@ -26,10 +26,10 @@ jobs:
       - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
-      # - name: Run a one-line script
-      #   run: |
-      #     echo '::error title=App process crashed!:: Some subtitle1\nFurther stuff'
-      #     exit 1
+      - name: Run a one-line script
+        run: |
+          echo '::error title=App process crashed!::Some subtitle1%0AFurther stuff'
+          exit 0
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
@@ -37,8 +37,22 @@ jobs:
         env: 
           TEST: "1.0"
         run: |
-          echo '::error title=App process crashed!:: Some subtitle1\nFurther stuff'
-          exit 1
+          echo '::error title=App process crashed!::Some subtitle1\nFurther stuff'
+          exit -
+          # echo "first ${TEST}"
+          # echo "second ${{ env.TEST }}"
+          # AAA=$(echo "third ${ env.TEST }")
+          # BBB=$(echo "fourth ${env.TEST}")
+          # echo $AAA
+          # echo $BBB
+
+      - name: Run a multi-line script
+        shell: bash
+        env: 
+          TEST: "1.0"
+        run: |
+          echo "::error title=App process crashed\!::Some subtitle1\nFurther stuff"
+          exit 0
           # echo "first ${TEST}"
           # echo "second ${{ env.TEST }}"
           # AAA=$(echo "third ${ env.TEST }")
