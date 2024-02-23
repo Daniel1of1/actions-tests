@@ -26,10 +26,10 @@ jobs:
       - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: |
-          echo '::error title=Oh noes!::Some subtitle1%0AFurther stuff'
-          exit 1
+      # - name: Run a one-line script
+      #   run: |
+      #     echo '::error title=App process crashed!:: Some subtitle1\nFurther stuff'
+      #     exit 1
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
