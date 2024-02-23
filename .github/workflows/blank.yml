@@ -28,7 +28,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-          echo '::error title=App process crashed!::Some subtitle1%0AFurther stuff'
+          echo '::error title=App process crashed!::Some subtitle1.%0AFurther stuff'
           exit 0
 
       # Runs a set of commands using the runners shell
@@ -37,7 +37,7 @@ jobs:
         env: 
           TEST: "1.0"
         run: |
-          echo '::error title=App process crashed!::Some subtitle1\nFurther stuff'
+          echo '::error title=App process crashed!::Some subtitle.1\nFurther stuff'
           exit 0
           # echo "first ${TEST}"
           # echo "second ${{ env.TEST }}"
@@ -51,7 +51,7 @@ jobs:
         env: 
           TEST: "1.0"
         run: |
-          echo "::error title=App process crashed\!::Some subtitle1\nFurther stuff"
+          echo "::error title=App process crashed\!::Some subtitle.1\nFurther stuff"
           exit 0
           # echo "first ${TEST}"
           # echo "second ${{ env.TEST }}"
