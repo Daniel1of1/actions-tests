@@ -38,7 +38,7 @@ jobs:
           TEST: "1.0"
         run: |
           echo '::error title=App process crashed!::Some subtitle1\nFurther stuff'
-          exit -
+          exit 0
           # echo "first ${TEST}"
           # echo "second ${{ env.TEST }}"
           # AAA=$(echo "third ${ env.TEST }")
@@ -46,7 +46,7 @@ jobs:
           # echo $AAA
           # echo $BBB
 
-      - name: Run a multi-line script
+      - name: Run a multi-line script 1
         shell: bash
         env: 
           TEST: "1.0"
