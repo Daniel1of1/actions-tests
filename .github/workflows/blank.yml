@@ -28,7 +28,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-          echo '::error title=App process crashed!::Some subtitle1.%0AFurther stuff'
+          echo "::error title=App process crashed!::This may be due to a library that has not been embedded correctly, or the app taking too long to launch.\nIf you have a recently added a dynamic library, check that it is being embedded."
           exit 0
 
       # Runs a set of commands using the runners shell
@@ -37,7 +37,7 @@ jobs:
         env: 
           TEST: "1.0"
         run: |
-          echo '::error title=App process crashed!::Some subtitle.1\nFurther stuff'
+          echo "::error title=App process crashed!::This may be due to a library that has not been embedded correctly, or the app taking too long to launch.%0AIf you have a recently added a dynamic library, check that it is being embedded."
           exit 0
           # echo "first ${TEST}"
           # echo "second ${{ env.TEST }}"
@@ -51,7 +51,7 @@ jobs:
         env: 
           TEST: "1.0"
         run: |
-          echo "::error title=App process crashed\!::Some subtitle.1\nFurther stuff"
+          echo '::error title=App process crashed!::This may be due to a library that has not been embedded correctly, or the app taking too long to launch. If you have a recently added a dynamic library, check that it is being embedded.'
           exit 0
           # echo "first ${TEST}"
           # echo "second ${{ env.TEST }}"
