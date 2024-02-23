@@ -27,7 +27,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, world!
+        run: |
+          echo '::error title=Oh noes!::Some subtitle1%0AFurther stuff'
+          exit 1
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
@@ -35,9 +37,11 @@ jobs:
         env: 
           TEST: "1.0"
         run: |
-          echo "first ${TEST}"
-          echo "second ${{ env.TEST }}"
-          AAA=$(echo "third ${ env.TEST }")
-          BBB=$(echo "fourth ${env.TEST}")
-          echo $AAA
-          echo $BBB
+          echo '::error title=App process crashed!:: Some subtitle1\nFurther stuff'
+          exit 1
+          # echo "first ${TEST}"
+          # echo "second ${{ env.TEST }}"
+          # AAA=$(echo "third ${ env.TEST }")
+          # BBB=$(echo "fourth ${env.TEST}")
+          # echo $AAA
+          # echo $BBB
