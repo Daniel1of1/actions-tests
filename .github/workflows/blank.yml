@@ -37,7 +37,7 @@ jobs:
         env: 
           TEST: "1.0"
         run: |
-          echo "::error title=App process crashed2!::This may be due to a library that has not been embedded correctly, or the app taking too long to launch.%0AIf you have a recently added a dynamic library, check that it is being embedded."
+          echo '::error title=App process crashed2!::This may be due to a library that has not been embedded correctly, or the app taking too long to launch.%0AIf you have a recently added a dynamic library, check that it is being embedded.'
           exit 0
           # echo "first ${TEST}"
           # echo "second ${{ env.TEST }}"
